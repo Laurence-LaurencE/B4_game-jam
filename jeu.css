@@ -1,0 +1,13 @@
+.home {
+    position: absolute;
+    /* align-items: left; */
+    top: 20px;
+    right: 20px;
+    border-style: solid;
+    padding: 0px 60px 0px 60px;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 200%;
+    font-weight: 500;
+    font-style: normal;
+    color:black ;
+}

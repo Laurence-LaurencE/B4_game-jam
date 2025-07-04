@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",           //# dernière version de JavaScript
+    "module": "ES6",           //# nécessaire aux imports/exports
+    "outDir": "./dist",        //# fichier dans lequel ranger les fichiers compilés
+    "rootDir": "./src",        //# dossier racine du projet, ici `src`
+    "strict": true
+  },
+  "include": ["src"],          //# dossier(s) parcouru par TS pour la compilation
+  "exclude": ["node_modules"]  //# dossier(s) à exclure de la compilation de TS
+}
