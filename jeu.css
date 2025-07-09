@@ -11,3 +11,66 @@
     font-style: normal;
     color:black ;
 }
+
+
+.grid {
+    /*background-color: green;*/
+    width: 50%;
+    background-color:none;
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    gap: 10%;
+
+}
+
+.ilet {
+    /*background-color:blue;   */
+    background-image: url("./picture/ilesable_pix_GPT.png"); 
+    background-size: cover; 
+    background-position: center;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.buttonilet1, .buttonilet2, .buttonilet3 {
+    background-color:red;
+    width: 150px;
+    height: 90%;
+    justify-content: center;
+    
+}
+
+
+/* création de class pour chaque image pour lier au .ts*/
+
+.imgilet1 {   
+    background-image: url(./picture/ilesable_pix_GPT.png)
+}
+
+.imgilet2 {   
+    background-image: url(./picture/coco_pix.png);
+}
+
+.imgilet3 {   
+    background-image: url(./picture/ilecoco_pix_GPT.png);
+}
+
+.imgilet4 {   
+    background-image: url(./picture/ilecoco_pix_GPT.png);
+}
+
+.imgilet5 {   
+    background-image: url(./picture/ilecoco_pix_GPT.png);
+}
+.imgilet6 {   
+    background-image: url(./picture/ilecoco_pix_GPT.png);
+}
+
+/* ________________________________________________ */
