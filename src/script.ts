@@ -74,7 +74,7 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous l
 /* mettre les images Ilets (sable) en dispay none */
 function resetIlets(): void {
   ilets.forEach(ilet => {
-    // ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
+    ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
   });
 }
 
