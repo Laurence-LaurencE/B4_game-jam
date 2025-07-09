@@ -1,5 +1,4 @@
 html, body {
-    
     height: 100%; 
     margin: 0;
     padding: 0;
@@ -7,7 +6,6 @@ html, body {
 }
 
 body {
-
     background-image: url("./picture/madinina_pixelated_finer.jpg");
     background-size: cover; /* couvre tuot l'écran*/
     background-position: center;
@@ -15,10 +13,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-   min-width: 980px;
-    /* max-height: 90vh; */
-    /*min-height: 90vh;  /*viewport height = 100% de la hauteur de la fenêtre visible _ vh = % de la hauteur de l'écran   */
- 
+    width: 100%;
 }
-
-
