@@ -1,42 +1,38 @@
 .home {
     position: absolute;
-    /* align-items: left; */
     top: 20px;
     right: 20px;
     border-style: solid;
     padding: 0px 60px 0px 60px;
     font-family: "Press Start 2P", system-ui;
-    font-size: 200%;
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 500;
     font-style: normal;
     color:black ;
 }
 
-
 .grid {
-    /*background-color: green;*/
-    width: 50%;
-    background-color:none;
+    width: 90%;
     display: flex;
     flex-direction: row ;
     flex-wrap: wrap;
     justify-content: center;
     align-items:center;
-    gap: 10%;
-
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .ilet {
-    /*background-color:blue;   */
     background-image: url("./picture/ilesable_pix_GPT.png"); 
     background-size: cover; 
     background-position: center;
     border-style: solid;
-    width: 200px;
-    height: 200px;
+    width: 30vw;
+    max-width: 200px;
+    aspect-ratio: 1/1;
     justify-content: center;
     align-items:center;
-
 }
 
 .buttonilet1, .buttonilet2, .buttonilet3 {
@@ -44,11 +40,7 @@
     width: 150px;
     height: 90%;
     justify-content: center;
-    
 }
-
-
-/* création de class pour chaque image pour lier au .ts*/
 
 .imgilet1 {   
     background-image: url(./picture/ilesable_pix_GPT.png)
@@ -69,8 +61,7 @@
 .imgilet5 {   
     background-image: url(./picture/ilecoco_pix_GPT.png);
 }
+
 .imgilet6 {   
     background-image: url(./picture/ilecoco_pix_GPT.png);
 }
-
-/* ________________________________________________ */

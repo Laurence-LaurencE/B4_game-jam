@@ -74,7 +74,7 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous l
 /* mettre les images Ilets (sable) en dispay none */
 function resetIlets(): void {
   ilets.forEach(ilet => {
-    ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
+    // ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
   });
 }
 
@@ -88,7 +88,7 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
   const randomIndex = Math.floor(Math.random() * ilets.length);
   const iletChoisi: HTMLElement | null = ilets[randomIndex];
 
-  iletChoisi.style.backgroundImage = 'url("./picture/ilet_sable_coco.png")';
+  // iletChoisi.style.backgroundImage = 'url("./picture/ilet_sable_coco.png")';
   
   if (iletChoisi) {
     iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';

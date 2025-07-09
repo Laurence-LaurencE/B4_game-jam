@@ -55,7 +55,7 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) { //on verifie q tous le
 /* mettre les images Ilets (sable) en dispay none */
 function resetIlets() {
     ilets.forEach(ilet => {
-        ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
+        // ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
     });
 }
 /* pour faire apparaître une noix de coco aléatoirement */
@@ -64,7 +64,7 @@ function coconutaleatoire() {
     resetIlets(); // on enlève l'img coco et remets img sable => appelle la focntion du dessus "display none"
     const randomIndex = Math.floor(Math.random() * ilets.length);
     const iletChoisi = ilets[randomIndex];
-    iletChoisi.style.backgroundImage = 'url("./picture/ilet_sable_coco.png")';
+    // iletChoisi.style.backgroundImage = 'url("./picture/ilet_sable_coco.png")';
     if (iletChoisi) {
         iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
         iletChoisi.style.backgroundSize = "cover";
