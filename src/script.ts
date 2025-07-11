@@ -72,7 +72,7 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous l
 
 //___ score ____
 //création d'un boite/variable 
-let score = 
+//let score = 
 
 
 /* mettre les images Ilets (sable) en dispay none */
