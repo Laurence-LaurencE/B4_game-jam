@@ -75,7 +75,15 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous l
 function resetIlets(): void {
   ilets.forEach(ilet => {
     ilet.style.backgroundImage = "url('./picture/ilesable_pix_GPT.png')"; // ou remet l'image de base si tu veux
-    ilet.removeEventListener("click", () => auClickSurCoconut(ilet))
+
+    // @ts-ignore
+    if (ilet._handler) {
+      // @ts-ignore
+      ilet.removeEventListener("click", ilet._handler);
+      // @ts-ignore
+      delete ilet._handler;
+    }
+
   });
 }
 
@@ -95,7 +103,12 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
     iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
     iletChoisi.style.backgroundSize = "cover";
     iletChoisi.style.backgroundPosition = "center";
-    iletChoisi.addEventListener("click", ()=> auClickSurCoconut (iletChoisi))
+
+    const gestionnaire = () => auClickSurCoconut(iletChoisi);
+    // @ts-ignore : on ignore l'erreur TS sur propriété custom
+    iletChoisi._handler = gestionnaire;
+
+    iletChoisi.addEventListener("click", gestionnaire)
   }
   
 
