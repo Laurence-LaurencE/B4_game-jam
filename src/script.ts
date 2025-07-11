@@ -12,43 +12,43 @@ const Ilet5: HTMLElement | null = document.getElementById("ilet_5");
 const Ilet6: HTMLElement | null = document.getElementById("ilet_6");
 
 
-// ___ écouteur d'évenemt => si User click s/ unilet alors alors fait ça... 
-if (Ilet1) {
-    Ilet1.addEventListener("click", function () {
-    console.log("ilet1 cliqué");
+// ___ écouteur d'évenemt => si User click s/ un ilet alors fait ça... 
+// if (Ilet1) {
+//     Ilet1.addEventListener("click", function () {
+//     console.log("ilet1 cliqué");
             
-    })
-}
-if (Ilet2) {
-    Ilet2.addEventListener("click", function () {
-    console.log("ilet2 cliqué");
+//     })
+// }
+// if (Ilet2) {
+//     Ilet2.addEventListener("click", function () {
+//     console.log("ilet2 cliqué");
         
-    })
-}
-if (Ilet3) {
-    Ilet3.addEventListener("click", function () {
-    console.log("ilet3 cliqué");
+//     })
+// }
+// if (Ilet3) {
+//     Ilet3.addEventListener("click", function () {
+//     console.log("ilet3 cliqué");
     
-    })
-}
-if (Ilet4) {
-    Ilet4.addEventListener("click", function () {
-    console.log("ilet4 cliqué");
+//     })
+// }
+// if (Ilet4) {
+//     Ilet4.addEventListener("click", function () {
+//     console.log("ilet4 cliqué");
     
-    })
-}
-if (Ilet5) {
-    Ilet5.addEventListener("click", function () {
-    console.log("ilet5 cliqué");
+//     })
+// }
+// if (Ilet5) {
+//     Ilet5.addEventListener("click", function () {
+//     console.log("ilet5 cliqué");
     
-    })
-}
-if (Ilet6) {
-    Ilet6.addEventListener("click", function () {
-    console.log("ilet6 cliqué");
+//     })
+// }
+// if (Ilet6) {
+//     Ilet6.addEventListener("click", function () {
+//     console.log("ilet6 cliqué");
     
-    })
-}
+//     })
+// }
 
 const ilets: HTMLElement[] = [];
 if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous les ilets existent ds le DOM avt de les ajouter ds tableau
@@ -74,7 +74,8 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous l
 /* mettre les images Ilets (sable) en dispay none */
 function resetIlets(): void {
   ilets.forEach(ilet => {
-    ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
+    ilet.style.backgroundImage = "url('./picture/ilesable_pix_GPT.png')"; // ou remet l'image de base si tu veux
+    ilet.removeEventListener("click", () => auClickSurCoconut(ilet))
   });
 }
 
@@ -85,7 +86,7 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
     /* !!!!!! ilet disparait ds toutes les cases !!  */
   resetIlets(); // on enlève l'img coco et remets img sable => appelle la focntion du dessus "display none"
 
-  const randomIndex = Math.floor(Math.random() * ilets.length);
+  const randomIndex = Math.floor(Math.random() * ilets.length);  
   const iletChoisi: HTMLElement | null = ilets[randomIndex];
 
   // iletChoisi.style.backgroundImage = 'url("./picture/ilet_sable_coco.png")';
@@ -94,6 +95,7 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
     iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
     iletChoisi.style.backgroundSize = "cover";
     iletChoisi.style.backgroundPosition = "center";
+    iletChoisi.addEventListener("click", ()=> auClickSurCoconut (iletChoisi))
   }
   
 
@@ -102,6 +104,22 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
     // iletChoisi.style.backgroundPosition = "center";
 }
 
+function auClickSurCoconut(iletChoisi: HTMLElement) {
+      iletChoisi.style.backgroundImage = 'url("./picture/ilecoco_pix_GPT.png")';
+      console.log("cocoNut");
+      
+    }
+
 // Répéter toutes les 3 secondes
 setInterval(coconutaleatoire, 3000);
 
+
+//probleme :
+
+//il comprend quil faut mettre un tree à partir du moment où je click s/ case ds laquelle un cocoN est déjà apparu au moins un fois
+
+// si click sur cocoN => + 1 à +5 
+// si click sur sabl => +
+
+//question :
+// Score => le nbr qui apparait ds ma console 

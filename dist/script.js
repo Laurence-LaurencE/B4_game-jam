@@ -7,37 +7,37 @@ const Ilet3 = document.getElementById("ilet_3");
 const Ilet4 = document.getElementById("ilet_4");
 const Ilet5 = document.getElementById("ilet_5");
 const Ilet6 = document.getElementById("ilet_6");
-// ___ écouteur d'évenemt => si User click s/ unilet alors alors fait ça... 
-if (Ilet1) {
-    Ilet1.addEventListener("click", function () {
-        console.log("ilet1 cliqué");
-    });
-}
-if (Ilet2) {
-    Ilet2.addEventListener("click", function () {
-        console.log("ilet2 cliqué");
-    });
-}
-if (Ilet3) {
-    Ilet3.addEventListener("click", function () {
-        console.log("ilet3 cliqué");
-    });
-}
-if (Ilet4) {
-    Ilet4.addEventListener("click", function () {
-        console.log("ilet4 cliqué");
-    });
-}
-if (Ilet5) {
-    Ilet5.addEventListener("click", function () {
-        console.log("ilet5 cliqué");
-    });
-}
-if (Ilet6) {
-    Ilet6.addEventListener("click", function () {
-        console.log("ilet6 cliqué");
-    });
-}
+// ___ écouteur d'évenemt => si User click s/ un ilet alors fait ça... 
+// if (Ilet1) {
+//     Ilet1.addEventListener("click", function () {
+//     console.log("ilet1 cliqué");
+//     })
+// }
+// if (Ilet2) {
+//     Ilet2.addEventListener("click", function () {
+//     console.log("ilet2 cliqué");
+//     })
+// }
+// if (Ilet3) {
+//     Ilet3.addEventListener("click", function () {
+//     console.log("ilet3 cliqué");
+//     })
+// }
+// if (Ilet4) {
+//     Ilet4.addEventListener("click", function () {
+//     console.log("ilet4 cliqué");
+//     })
+// }
+// if (Ilet5) {
+//     Ilet5.addEventListener("click", function () {
+//     console.log("ilet5 cliqué");
+//     })
+// }
+// if (Ilet6) {
+//     Ilet6.addEventListener("click", function () {
+//     console.log("ilet6 cliqué");
+//     })
+// }
 const ilets = [];
 if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) { //on verifie q tous les ilets existent ds le DOM avt de les ajouter ds tableau
     ilets.push(Ilet1, Ilet2, Ilet3, Ilet4, Ilet5, Ilet6); //.push va les ajouter au fur à mesure à la fin du tableau ds l'ordre de saisie
@@ -55,7 +55,8 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) { //on verifie q tous le
 /* mettre les images Ilets (sable) en dispay none */
 function resetIlets() {
     ilets.forEach(ilet => {
-        ilet.style.backgroundImage = "none"; // ou remet l'image de base si tu veux
+        ilet.style.backgroundImage = "url('./picture/ilesable_pix_GPT.png')"; // ou remet l'image de base si tu veux
+        ilet.removeEventListener("click", () => auClickSurCoconut(ilet));
     });
 }
 /* pour faire apparaître une noix de coco aléatoirement */
@@ -69,10 +70,21 @@ function coconutaleatoire() {
         iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
         iletChoisi.style.backgroundSize = "cover";
         iletChoisi.style.backgroundPosition = "center";
+        iletChoisi.addEventListener("click", () => auClickSurCoconut(iletChoisi));
     }
     // iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
     // iletChoisi.style.backgroundSize = "cover";
     // iletChoisi.style.backgroundPosition = "center";
 }
+function auClickSurCoconut(iletChoisi) {
+    iletChoisi.style.backgroundImage = 'url("./picture/ilecoco_pix_GPT.png")';
+    console.log("cocoNut");
+}
 // Répéter toutes les 3 secondes
 setInterval(coconutaleatoire, 3000);
+//probleme :
+//il comprend quil faut mettre un tree à partir du moment où je click s/ case ds laquelle un cocoN est déjà apparu au moins un fois
+// si click sur cocoN => + 1 à +5 
+// si click sur sabl => +
+//question :
+// Score => le nbr qui apparait ds ma console 
