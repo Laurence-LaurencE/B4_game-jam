@@ -72,7 +72,7 @@ if (Ilet1 && Ilet2 && Ilet3 && Ilet4 && Ilet5 && Ilet6) {  //on verifie q tous l
 
 //___ score ____
 //création d'un boite/variable 
-//let score = 
+let score = 0;   /* le score start à 0*/ 
 
 
 /* mettre les images Ilets (sable) en dispay none */
@@ -107,13 +107,18 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
     iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
     iletChoisi.style.backgroundSize = "cover";
     iletChoisi.style.backgroundPosition = "center";
+  
+
 
     const gestionnaire = () => auClickSurCoconut(iletChoisi);
     // @ts-ignore : on ignore l'erreur TS sur propriété custom
     iletChoisi._handler = gestionnaire;
 
     iletChoisi.addEventListener("click", gestionnaire)
+
   }
+
+  
   
 
     // iletChoisi.style.backgroundImage = 'url("./picture/coco_pix.png")';
@@ -121,14 +126,31 @@ function coconutaleatoire(): void {  /* la fonction ne retourne rien (elle fait 
     // iletChoisi.style.backgroundPosition = "center";
 }
 
+function scoreIncrement(): void {
+    ++score;     /* Opérateur : x++ (incrémentera la valeur et renverra la valeur avant l'incrément) ou ++x ( l'operateur incrémentera la valeur et renverra la valeur après l'incrément) */
+
+
+      /* je rattache mon id (html) avec le TS => DOM
+       */
+    const affichScore = document.getElementById("scorenbr");
+    if (affichScore) {
+      affichScore.textContent = score.toString();
+      /* textContent pr afficher le score dans la page */
+      /* score.toString() convertir le nbr en texte, car textContent attend une chaîne de caractères. */
+    }
+}
+
 function auClickSurCoconut(iletChoisi: HTMLElement) {
       iletChoisi.style.backgroundImage = 'url("./picture/ilecoco_pix_GPT.png")';
       console.log("cocoNut");
+      scoreIncrement();
       
     }
 
 // Répéter toutes les 3 secondes
 setInterval(coconutaleatoire, 3000);
+
+
 
 
 //probleme :
